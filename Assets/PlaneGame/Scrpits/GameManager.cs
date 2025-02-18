@@ -9,6 +9,9 @@ namespace PlaneGame
         static GameManager gameManager;
         public static GameManager Instance { get => gameManager; }
 
+        private bool isGameOver = false;
+        public bool IsGameOver { get { return isGameOver; } }
+
         ObstacleLooper obstacleLooper;
 
         private void Awake()
@@ -16,7 +19,10 @@ namespace PlaneGame
             gameManager = this;
         }
 
-
+        private void Update()
+        {
+            
+        }
     }
 }
 

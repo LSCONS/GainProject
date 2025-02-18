@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour
+namespace PlaneGame
 {
-    public GameObject topObstacle;
-    public GameObject bottomObstacle;
-
-
-    public void SettingObstacle(float holeSize)
+    public class Obstacle : MonoBehaviour
     {
-        float halfHoleSize = holeSize / 2;
+        public GameObject topObstacle;
+        public GameObject bottomObstacle;
 
-        topObstacle.transform.localPosition = new Vector3(0, halfHoleSize, 0);
-        bottomObstacle.transform.localPosition = new Vector3(0, -halfHoleSize, 0);
+
+        public void SettingObstacle(float holeSize)
+        {
+            float halfHoleSize = holeSize / 2;
+
+            topObstacle.transform.localPosition = new Vector3(0, halfHoleSize, 0);
+            bottomObstacle.transform.localPosition = new Vector3(0, -halfHoleSize, 0);
+        }
     }
 }

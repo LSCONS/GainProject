@@ -3,32 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ObstacleLooper : MonoBehaviour
+namespace PlaneGame
 {
-    [SerializeField]private float holeSizeMin = 30f;
-    [SerializeField]private float holeSizeMax = 50f;
-
-    Obstacle[] obstacles;
-
-    [SerializeField] private float obstacleResetX = 200f;
-
-    [SerializeField] private float moveObstacleTime = 5f;
-
-    private void Awake()
+    public class ObstacleLooper : MonoBehaviour
     {
-        Setup();
-    }
+        [SerializeField] private float holeSizeMin = 30f;
+        [SerializeField] private float holeSizeMax = 50f;
 
+        Obstacle[] obstacles;
 
-    //시작 하기 전 값을 대입해두거나 초기화하는 메서드
-    private void Setup()
-    {
-        obstacles = FindObjectsOfType<Obstacle>();
+        [SerializeField] private float obstacleResetX = 200f;
 
-        foreach(Obstacle obstacle in obstacles)
+        [SerializeField] private float moveObstacleTime = 5f;
+
+        public GameObject movingObject;
+        public GameObject obstaclesObject;
+
+        private void Awake()
         {
-            obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
+            Setup();
+        }
+
+        private void Update()
+        {
+            
+        }
+
+
+        //시작 하기 전 값을 대입해두거나 초기화하는 메서드
+        private void Setup()
+        {
+            obstacles = FindObjectsOfType<Obstacle>();
+
+            foreach (Obstacle obstacle in obstacles)
+            {
+                obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
+                obstacle.transform.parent = obstaclesObject.transform;
+            }
+        }
+
+
+        //오브젝트를 전체적으로 왼쪽으로 옮기는 로직에 대해 어떻게 구현할 것인지 고민해야함.
+        //움직이는 배경 오브젝트들은 계속 왼쪽으로 움직이는 오브젝트인 MovingObject의 자식 오브젝트로 만든다.
+        //이후 배경오브젝트들은 특정 BoxCollider에 닿을 경우 다시 오른쪽으로 이동하며 반복하게 만듦.
+        //하지만 부딪힌 오브젝트가 Obstacle 오브젝트인 경우 MovingObject가 아닌 Obstacles의 자식으로 보낸다.
+        //이후 딜레이 타임이 끝나 해당 스크립크에서 특정 메서드를 실행하면 다음 순서에 있는 Obstacles에 있는 Obstacle를 호출하여
+        //MovingObject의 자식으로 보낸다.
+        private void MoveObstacle(Obstacle obstacle)
+        {
+            float rand = Random.Range(holeSizeMin, holeSizeMax);
+            obstacle.transform.parent = movingObject.transform;
+            obstacle.SettingObstacle(rand);
         }
     }
-
 }
