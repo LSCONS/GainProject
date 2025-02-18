@@ -16,6 +16,9 @@ namespace PlaneGame
 
         [SerializeField] private float moveObstacleTime = 5f;
 
+        private float delayTime = 0f;
+        private int nowObstacleNum = 0;
+
         public GameObject movingObject;
         public GameObject obstaclesObject;
 
@@ -26,9 +29,32 @@ namespace PlaneGame
 
         private void Update()
         {
-            
+            delayTime += Time.deltaTime;
+
+            if (delayTime > moveObstacleTime)
+            {
+                MoveObstacle();
+                delayTime = 0f;
+            }
         }
 
+
+        private Obstacle CheckObstacle()
+        {
+            Obstacle obstacle = null;
+            if(obstacles.Length < nowObstacleNum)
+            {
+                nowObstacleNum++;
+                obstacle = obstacles[nowObstacleNum];
+            }
+            else
+            {
+                nowObstacleNum = 0;
+                obstacle = obstacles[nowObstacleNum];
+            }
+
+            return obstacle;
+        }
 
         //시작 하기 전 값을 대입해두거나 초기화하는 메서드
         private void Setup()
@@ -49,8 +75,9 @@ namespace PlaneGame
         //하지만 부딪힌 오브젝트가 Obstacle 오브젝트인 경우 MovingObject가 아닌 Obstacles의 자식으로 보낸다.
         //이후 딜레이 타임이 끝나 해당 스크립크에서 특정 메서드를 실행하면 다음 순서에 있는 Obstacles에 있는 Obstacle를 호출하여
         //MovingObject의 자식으로 보낸다.
-        private void MoveObstacle(Obstacle obstacle)
+        private void MoveObstacle()
         {
+            Obstacle obstacle = CheckObstacle();
             float rand = Random.Range(holeSizeMin, holeSizeMax);
             obstacle.transform.parent = movingObject.transform;
             obstacle.SettingObstacle(rand);

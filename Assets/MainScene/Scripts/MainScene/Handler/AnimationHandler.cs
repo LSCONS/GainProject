@@ -12,9 +12,6 @@ namespace MainScene
 
         private Animator animator; 
 
-        private float tempX = 0f;
-        private float tempY = 0f;
-
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
