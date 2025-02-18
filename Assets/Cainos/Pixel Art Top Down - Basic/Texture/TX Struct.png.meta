@@ -221,132 +221,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TX Stair All
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 384
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79028df9587495645a5cbd34d1e38ede
-      internalID: 11401034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Stair Right
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f12cc7fae53c024e82dd9fa8f6a0f66
-      internalID: 1453135738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Stair Left
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 384
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9bd5a9a8533b7344aa96ba1f5c75e34
-      internalID: 948848351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Old Stair All
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 256
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c54ff90d7f686db4481e8dc50585e0d4
-      internalID: 1583421455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Old Stair Right
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7707a72f44a01e94db1c68caf47fa806
-      internalID: 1563308009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Stair Lef
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 256
-        width: 65
-        height: 96
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88993a769e5364b42b961f697675a810
-      internalID: -1821221676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: TX Door1
       rect:
         serializedVersion: 2
@@ -361,8 +235,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba5a4451b79def9409259cc069150a82
-      internalID: -1068218798
+      spriteID: f5fedcde076301e4eaf30d2293fddf15
+      internalID: 777421164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Staire Left
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 384
+        width: 8
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3d43d264d4c964486a7a6005e1c9e1
+      internalID: -405471583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Stair Right
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 384
+        width: 8
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15da016e649514a48a1e21ad6b2ce220
+      internalID: -1322519811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Stair Line
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 8
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919948eacc835e74da5b59dc0ea13a36
+      internalID: 1690296216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Stair
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 384
+        width: 50
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d75cd6c416f664489a18ff22cf8444a
+      internalID: -177128988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Old Stair
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 256
+        width: 49
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6df8e72980473cf49a232502f300411d
+      internalID: -2133509196
       vertices: []
       indices: 
       edges: []
@@ -382,8 +361,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59453c02f5979fa4485e636cd658d262
-      internalID: -217887065
+      spriteID: 95bd02f5036f61444b5f31e5ff5eb510
+      internalID: 2122693566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Left Door Obstacle
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 320
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966609c7b110be74c904cbc308579719
+      internalID: -1796758686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Right Door Obstacle
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa6132c3da4b4f41b9cad9f65a4fc13
+      internalID: 553129652
       vertices: []
       indices: 
       edges: []
@@ -399,36 +420,70 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TX Door1: -1068218798
-      TX Door2: -217887065
-      TX Old Stair All: 1583421455
-      TX Old Stair Right: 1563308009
-      TX Stair All: 11401034
-      TX Stair Lef: -1821221676
-      TX Stair Left: 948848351
-      TX Stair Right: 1453135738
-      TX Stairs Broken L L: 21300034
-      TX Stairs Broken L M: 21300036
-      TX Stairs Broken L R: 21300038
-      TX Stairs Broken M L: 21300046
-      TX Stairs Broken M M: 21300030
-      TX Stairs Broken M R: 21300032
-      TX Stairs Broken R L: 21300040
-      TX Stairs Broken R M: 21300042
-      TX Stairs Broken R R: 21300044
-      TX Stairs L L: 21300010
-      TX Stairs L M: 21300014
-      TX Stairs L R: 21300012
-      TX Stairs M L: 21300000
-      TX Stairs M M: 21300004
-      TX Stairs M R: 21300002
-      TX Stairs R L: 21300020
-      TX Stairs R M: 21300022
-      TX Stairs R R: 21300024
-      TX Struct Gate: 21300016
-      TX Struct Gate T1 B: 21300026
-      TX Struct Gate T1 T: 21300028
-      TX Struct Gate T2 B: 21300018
+      TX Door1: 777421164
+      TX Door2: 2122693566
+      TX Left Door Obstacle: -1796758686
+      TX Old Stair: -2133509196
+      TX Right Door Obstacle: 553129652
+      TX Stair: -177128988
+      TX Stair Line: 1690296216
+      TX Stair Right: -1322519811
+      TX Staire Left: -405471583
+      TX Struct_10: 815011361
+      TX Struct_11: 580507998
+      TX Struct_12: 94664676
+      TX Struct_13: 1632092720
+      TX Struct_14: -891976282
+      TX Struct_15: 1917716012
+      TX Struct_16: -1210625386
+      TX Struct_17: -1473473901
+      TX Struct_18: 1804590925
+      TX Struct_19: 1495524234
+      TX Struct_20: -1412524296
+      TX Struct_21: 417950591
+      TX Struct_22: 2007991297
+      TX Struct_23: -120277783
+      TX Struct_24: 1600651751
+      TX Struct_25: 602714372
+      TX Struct_26: -1828598485
+      TX Struct_27: -794633255
+      TX Struct_28: -443353564
+      TX Struct_29: -859390972
+      TX Struct_3: -1213075298
+      TX Struct_30: -1961137690
+      TX Struct_31: 770288524
+      TX Struct_32: -599713370
+      TX Struct_33: 307182152
+      TX Struct_34: -1501508210
+      TX Struct_35: 525117072
+      TX Struct_36: 1394219828
+      TX Struct_37: -552786779
+      TX Struct_38: 970609705
+      TX Struct_39: -1092677522
+      TX Struct_40: 2094476154
+      TX Struct_41: 124749462
+      TX Struct_42: 1741731591
+      TX Struct_43: -1558101816
+      TX Struct_44: 1614060720
+      TX Struct_45: 551171598
+      TX Struct_46: -775929462
+      TX Struct_47: -773098543
+      TX Struct_48: 1955530801
+      TX Struct_49: -1121762436
+      TX Struct_50: 758939165
+      TX Struct_51: -722408604
+      TX Struct_52: -1368425215
+      TX Struct_53: -1309686067
+      TX Struct_54: 847609919
+      TX Struct_55: -1582103476
+      TX Struct_56: 1084501019
+      TX Struct_57: 1239262253
+      TX Struct_58: 201472816
+      TX Struct_59: 1362743809
+      TX Struct_60: -1122070034
+      TX Struct_7: -1122032534
+      TX Struct_8: -965603289
+      TX Struct_9: 127819433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
