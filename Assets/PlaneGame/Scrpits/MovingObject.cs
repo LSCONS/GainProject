@@ -19,17 +19,16 @@ namespace PlaneGame
 
         private void Update()
         {
-
             if (GameManager.Instance.IsGameOver == true)
             {
                 _rigidbody2D.velocity = Vector2.zero;
                 return;
             }
-            
 
-            _rigidbody2D.velocity = new Vector2(-movingSpeed * Time.deltaTime, 0);
-
-
+            if (GameManager.Instance.IsGameStart)
+            {
+                _rigidbody2D.velocity = new Vector2(-movingSpeed * Time.deltaTime, 0);
+            }
         }
     }
 }

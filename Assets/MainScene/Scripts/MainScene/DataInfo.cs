@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class DataInfo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private static DataInfo dataInfo;
 
-    // Update is called once per frame
-    void Update()
+    public static DataInfo Instance { get => dataInfo; }
+
+    public readonly string planeGameBestScoreKey = "playerBestScore";
+
+    private int planeGameCurrentScore = 0;
+    public int PlaneGameCurrentScore { get => planeGameCurrentScore; }
+
+    public int PlaneGameBestScore { get => PlayerPrefs.GetInt(planeGameBestScoreKey, 0); }
+
+
+    //현재 스코어를 최고 스코어와 비교하여 저장함
+    public void SavePlaneGameData(int currentScore)
     {
-        
+        if (PlaneGameBestScore < currentScore)
+        {
+            PlayerPrefs.SetInt(planeGameBestScoreKey, currentScore);
+        }
+
+        planeGameCurrentScore = currentScore;
     }
 }

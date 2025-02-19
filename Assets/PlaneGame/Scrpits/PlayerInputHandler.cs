@@ -7,11 +7,39 @@ namespace PlaneGame
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        public bool isClick;
+        public bool isClick = false;
+        public bool isSelect = false;
+        public bool isCancel = false;
+
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Space) ||
+            InputPlayerGameStart();
+            InputPlayerPlayGame();
+        }
+
+
+        //게임이 시작하기 전 플레이어의 입력을 받는 메서드
+        private void InputPlayerGameStart()
+        {
+            if (GameManager.Instance.IsGameStart == false)
+            {
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    isSelect = true;
+                }
+                else if (Input.GetKeyDown(KeyCode.X))
+                {
+                    isCancel = true;
+                }
+            }
+        }
+
+
+        //게임을 시작한 후 플레이어의 입력을 받는 메서드
+        private void InputPlayerPlayGame()
+        {
+            if (Input.GetKeyDown(KeyCode.Space) ||
                 Input.GetKeyDown(KeyCode.F) ||
                 Input.GetMouseButtonDown(0))
             {

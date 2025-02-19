@@ -6,32 +6,18 @@ namespace PlaneGame
 {
     public class DataManager : MonoBehaviour
     {
-        private static DataManager dataManager;
-
-        public static DataManager Instance { get => dataManager; }
-
-        private readonly string bestScoreKey = "playerBestScore";
 
         private int currentScore = 0;
         public int CurrentScore { get => currentScore; }
 
-        public int BestScore { get => PlayerPrefs.GetInt(bestScoreKey, 0); }
+        private static DataManager dataManager;
+
+        public static DataManager Instance { get => dataManager; }
 
         private void Awake()
         {
             dataManager = this;
         }
-
-
-        //현재 스코어를 최고 스코어와 비교하여 저장함
-        public void SaveScore()
-        {
-            if (BestScore < CurrentScore)
-            {
-                PlayerPrefs.SetInt(bestScoreKey, CurrentScore);
-            }
-        }
-
 
         //현재 스코어를 매개변수 값 만큼 증가시킴
         public void AddScore(int score)
@@ -44,6 +30,13 @@ namespace PlaneGame
         public void ResetScore()
         {
             currentScore = 0;
+        }
+
+
+        //현재 스코어를 데이터베이스에 저장.
+        public void SaveData()
+        {
+            DataInfo.Instance.SavePlaneGameData(currentScore);
         }
     }
 

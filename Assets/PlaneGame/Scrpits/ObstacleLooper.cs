@@ -36,12 +36,15 @@ namespace PlaneGame
 
         private void Update()
         {
-            delayTime += Time.deltaTime;
-
-            if (delayTime > moveObstacleTime)
+            if(GameManager.Instance.IsGameStart && GameManager.Instance.IsGameOver == false)
             {
-                MoveObstacle();
-                delayTime = 0f;
+                delayTime += Time.deltaTime;
+
+                if (delayTime > moveObstacleTime)
+                {
+                    MoveObstacle();
+                    delayTime = 0f;
+                }
             }
         }
 

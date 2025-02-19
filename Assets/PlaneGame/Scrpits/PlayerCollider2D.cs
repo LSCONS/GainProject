@@ -23,5 +23,15 @@ namespace PlaneGame
                 GameManager.Instance.GameOver();
             }
         }
+
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if(collision.gameObject.layer == LayerMask.NameToLayer("ScoreCollider"))
+            {
+                DataManager.Instance.AddScore(1);
+                UIManager.Instance.TextUpdate();
+            }
+        }
     }
 }

@@ -13,7 +13,8 @@ namespace PlaneGame
         private bool isGameOver = false;
         public bool IsGameOver { get => isGameOver;}
 
-        ObstacleLooper obstacleLooper;
+        private bool isGameStart = false;
+        public bool IsGameStart { get => isGameStart; }
 
         private void Awake()
         {
