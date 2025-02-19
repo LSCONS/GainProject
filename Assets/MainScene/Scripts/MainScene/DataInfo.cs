@@ -41,6 +41,7 @@ public class DataInfo : MonoBehaviour
         if (PlaneGameBestScore < currentScore)
         {
             PlayerPrefs.SetInt(planeGameBestScoreKey, currentScore);
+            int bestcore = PlayerPrefs.GetInt(planeGameBestScoreKey);
         }
 
         planeGameCurrentScore = currentScore;

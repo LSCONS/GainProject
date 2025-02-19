@@ -7,16 +7,16 @@ namespace PlaneGame
 {
     public class ObstacleLooper : MonoBehaviour
     {
-        [SerializeField] private float holeSizeMin = 30f;
-        [SerializeField] private float holeSizeMax = 50f;
+        private float holeSizeMin = 4f;
+        private float holeSizeMax = 6f;
 
-        [SerializeField] private float obstacleHeightMargin = 3f;
+        private float obstacleHeightMargin = 4f;
         
         Obstacle[] obstacles;
 
-        [SerializeField] private float obstacleResetX = 200f;
+        private float obstacleResetX = 30f;
 
-        [SerializeField] private float moveObstacleTime = 5f;
+        private float moveObstacleTime = 5f;
 
         private float delayTime = 0f;
         private int nowObstacleNum = 0;
@@ -38,6 +38,7 @@ namespace PlaneGame
         {
             if(GameManager.Instance.IsGameStart && GameManager.Instance.IsGameOver == false)
             {
+                GetGameLevelUpdate();
                 delayTime += Time.deltaTime;
 
                 if (delayTime > moveObstacleTime)
@@ -96,6 +97,46 @@ namespace PlaneGame
             float randHeight = Random.Range(-obstacleHeightMargin / 2, obstacleHeightMargin / 2);
             obstacle.transform.parent = movingObject.transform;
             obstacle.SettingObstacle(randHoleSize, randHeight);
+        }
+
+
+        private void GetGameLevelUpdate()
+        {
+            GameLevel gameLevel = GameManager.Instance.GetCurrentLevel();
+
+            switch(gameLevel)
+            {
+                case GameLevel.Easy:
+                    holeSizeMin = 4f;
+                    holeSizeMax = 6f;
+                    obstacleHeightMargin = 2f;
+                    moveObstacleTime = 5f;
+                    break;
+                case GameLevel.Noaml:
+                    holeSizeMin = 4f;
+                    holeSizeMax = 6f;
+                    obstacleHeightMargin = 3f;
+                    moveObstacleTime = 4f;
+                    break;
+                case GameLevel.Hard:
+                    holeSizeMin = 3f;
+                    holeSizeMax = 5f;
+                    obstacleHeightMargin = 4f;
+                    moveObstacleTime = 3f;
+                    break;
+                case GameLevel.Extreme:
+                    holeSizeMin = 3f;
+                    holeSizeMax = 5f;
+                    obstacleHeightMargin = 4f;
+                    moveObstacleTime = 2.5f;
+                    break;
+                case GameLevel.Hell:
+                    holeSizeMin = 2.5f;
+                    holeSizeMax = 4f;
+                    obstacleHeightMargin = 4f;
+                    moveObstacleTime = 2f;
+                    break;
+            }
         }
     }
 }
