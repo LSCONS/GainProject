@@ -20,6 +20,13 @@ namespace MainScene
             animationHandler = GetComponent<AnimationHandler>();
         }
 
+        private void Start()
+        {
+            float x = PlayerPrefs.GetFloat(DataInfo.Instance.mainPlayerPositionXKey, 0f);
+            float y = PlayerPrefs.GetFloat(DataInfo.Instance.mainPlayerPositionYKey, 0f);
+            transform.position = new Vector2(x, y);
+        }
+
         private void FixedUpdate()
         {
             Movement(playerInputHandler.PlayerMoveValue);

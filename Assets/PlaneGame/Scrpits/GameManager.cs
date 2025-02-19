@@ -3,9 +3,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PlaneGame
 {
+    public enum GameLevel
+    {
+        Easy,
+        Noaml,
+        Hard,
+        Extreme,
+        Hell
+    }
     public class GameManager : MonoBehaviour
     {
         static GameManager gameManager;
@@ -46,6 +55,7 @@ namespace PlaneGame
                 if (currentDelayTime > maxDelayTime)
                 {
                     //게임이 오버된 후 MaxDelayTime이 흐른 후 씬 재시작***
+                    SceneManager.LoadScene("PlaneGameScene");
                 }
             }
         }
@@ -71,6 +81,22 @@ namespace PlaneGame
         public void ClickStart()
         {
             isClickStart = true;
+        }
+
+
+        public GameLevel GetCurrentLevel()
+        {
+            GameLevel gameLevel = GameLevel.Easy;
+
+            int currentScore = DataManager.Instance.CurrentScore;
+
+            if(currentScore <= 5)       gameLevel = GameLevel.Easy;
+            else if(currentScore <= 10) gameLevel = GameLevel.Noaml;
+            else if(currentScore <= 20) gameLevel = GameLevel.Hard;
+            else if(currentScore <= 50) gameLevel = GameLevel.Extreme;
+            else                        gameLevel = GameLevel.Hell;
+
+            return gameLevel;
         }
     }
 }

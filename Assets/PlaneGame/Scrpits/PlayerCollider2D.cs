@@ -27,7 +27,7 @@ namespace PlaneGame
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if(collision.gameObject.layer == LayerMask.NameToLayer("ScoreCollider"))
+            if(collision.gameObject.layer == LayerMask.NameToLayer("ScoreLayer"))
             {
                 DataManager.Instance.AddScore(1);
                 UIManager.Instance.TextUpdate();

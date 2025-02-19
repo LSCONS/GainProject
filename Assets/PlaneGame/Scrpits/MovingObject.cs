@@ -8,26 +8,22 @@ namespace PlaneGame
 {
     public class MovingObject : MonoBehaviour
     {
-        [SerializeField] private float movingSpeed = 100f;
-
-        Rigidbody2D _rigidbody2D;
-
-        private void Awake()
-        {
-            _rigidbody2D = GetComponent<Rigidbody2D>();
-        }
+        private float movingSpeed = 5f;
 
         private void Update()
         {
             if (GameManager.Instance.IsGameOver == true)
             {
-                _rigidbody2D.velocity = Vector2.zero;
                 return;
             }
 
             if (GameManager.Instance.IsGameStart)
             {
-                _rigidbody2D.velocity = new Vector2(-movingSpeed * Time.deltaTime, 0);
+
+                transform.position = Vector3.Lerp(
+                    transform.position, 
+                    transform.position + (Vector3.left),
+                    movingSpeed * Time.deltaTime);
             }
         }
     }

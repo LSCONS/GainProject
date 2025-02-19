@@ -10,11 +10,7 @@ namespace MainScene
 
         private void Update()
         {
-            if (transform.position.y >= 22f)
-            {
-                Debug.Log(transform.position.y);
-                transform.position = new Vector3(0, 22f, -10);
-            }
+            transform.position = new Vector3(0, player.transform.position.y, -10);
         }
     }
 }

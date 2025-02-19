@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace PlaneGame
 {
@@ -32,7 +33,7 @@ namespace PlaneGame
                 }
                 else if (Input.GetKeyDown(KeyCode.X))
                 {
-                    //메인씬으로 되돌아감.***
+                    SceneManager.LoadScene("MainScene");
                 }
             }
         }
