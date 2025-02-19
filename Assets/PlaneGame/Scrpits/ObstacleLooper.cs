@@ -9,7 +9,7 @@ namespace PlaneGame
     {
         [SerializeField] private float holeSizeMin = 30f;
         [SerializeField] private float holeSizeMax = 50f;
-
+        
         Obstacle[] obstacles;
 
         [SerializeField] private float obstacleResetX = 200f;
@@ -27,6 +27,11 @@ namespace PlaneGame
             Setup();
         }
 
+        private void Start()
+        {
+            MoveObstacle();
+        }
+
         private void Update()
         {
             delayTime += Time.deltaTime;
@@ -39,12 +44,13 @@ namespace PlaneGame
         }
 
 
+        //해당 장애물의 다음 번호를 반환
         private Obstacle CheckObstacle()
         {
             Obstacle obstacle = null;
-            if(obstacles.Length < nowObstacleNum)
+            nowObstacleNum++;
+            if (obstacles.Length > nowObstacleNum)
             {
-                nowObstacleNum++;
                 obstacle = obstacles[nowObstacleNum];
             }
             else
@@ -56,6 +62,7 @@ namespace PlaneGame
             return obstacle;
         }
 
+
         //시작 하기 전 값을 대입해두거나 초기화하는 메서드
         private void Setup()
         {
@@ -63,9 +70,16 @@ namespace PlaneGame
 
             foreach (Obstacle obstacle in obstacles)
             {
-                obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
-                obstacle.transform.parent = obstaclesObject.transform;
+                ResetObstaclePosition(obstacle);
             }
+        }
+
+
+        //해당 장애물의 위치를 초기화하는 메서드
+        public void ResetObstaclePosition(Obstacle obstacle)
+        {
+            obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
+            obstacle.transform.parent = obstaclesObject.transform;
         }
 
 
