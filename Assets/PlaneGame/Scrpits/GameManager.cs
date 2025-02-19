@@ -19,14 +19,18 @@ namespace PlaneGame
             gameManager = this;
         }
 
-        private void Update()
-        {
-            
-        }
 
+        //게임이 종료 된 경우 실행할 메서드
         public void GameOver()
         {
             isGameOver = true;
+        }
+
+
+        //게임을 재시작할 경우 실행할 메서드
+        public void GameRestart()
+        {
+
         }
     }
 }
