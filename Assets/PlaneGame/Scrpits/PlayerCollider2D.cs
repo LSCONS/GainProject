@@ -4,24 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PlaneGame {
+namespace PlaneGame 
+{
     public class PlayerCollider2D : MonoBehaviour
     {
-        GameManager gameManager;
         AnimationHandler animationHandler;
 
-        private void Awake()
+        private void Start()
         {
-            gameManager = GameManager.Instance;
             animationHandler = GetComponent<AnimationHandler>();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.transform.CompareTag("Obstacle"))
+            if (collision.transform.CompareTag("Obstacle") && GameManager.Instance.IsGameOver == false)
             {
                 animationHandler.GameOver();
-                gameManager.GameOver();
+                GameManager.Instance.GameOver();
             }
         }
     }

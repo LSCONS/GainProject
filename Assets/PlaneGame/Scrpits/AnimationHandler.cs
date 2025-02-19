@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationHandler : MonoBehaviour
+namespace PlaneGame
 {
-    private static readonly int IsDead = Animator.StringToHash("IsDead");
-    Animator animator;
-
-    private void Awake()
+    public class AnimationHandler : MonoBehaviour
     {
-        animator = GetComponentInChildren<Animator>();
-    }
+        private static readonly int IsDead = Animator.StringToHash("IsDead");
+        Animator animator;
 
-    //게임이 끝날 경우 처리 할 애니메이션 메서드
-    public void GameOver()
-    {
-        animator.SetBool(IsDead, true);
-    }
+        private void Awake()
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+
+        //게임이 끝날 경우 처리 할 애니메이션 메서드
+        public void GameOver()
+        {
+            animator.SetBool(IsDead, true);
+        }
 
 
-    //게임이 재시작 될 경우 처리할 애니메이션 메서드
-    public void GameRestart()
-    {
-        animator.SetBool(IsDead, false);
+        //게임이 재시작 될 경우 처리할 애니메이션 메서드
+        public void GameRestart()
+        {
+            animator.SetBool(IsDead, false);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using PlaneGame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,22 @@ namespace PlaneGame
         public static GameManager Instance { get => gameManager; }
 
         private bool isGameOver = false;
-        public bool IsGameOver { get { return isGameOver; } }
+        public bool IsGameOver { get => isGameOver;}
 
         ObstacleLooper obstacleLooper;
 
         private void Awake()
         {
-            gameManager = this;
+            if(gameManager == null)
+            {
+                gameManager = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            if (Instance == null) Debug.Log("gameManger Instance null");
         }
 
 
@@ -24,6 +34,7 @@ namespace PlaneGame
         public void GameOver()
         {
             isGameOver = true;
+            Debug.Log("게임 오버");
         }
 
 

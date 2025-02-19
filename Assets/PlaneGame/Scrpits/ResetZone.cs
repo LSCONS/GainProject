@@ -8,7 +8,7 @@ namespace PlaneGame
     public class ResetZone : MonoBehaviour
     {
         private float backgroundWidth = 16f;
-        private float resetZoneMargin = 8f;
+        private float resetZoneMargin = 16f;
 
         private ObstacleLooper obstacleLooper;
         private void Awake()

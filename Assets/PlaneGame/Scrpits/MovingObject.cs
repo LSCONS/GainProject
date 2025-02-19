@@ -1,6 +1,7 @@
 using PlaneGame;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace PlaneGame
@@ -11,20 +12,24 @@ namespace PlaneGame
 
         Rigidbody2D _rigidbody2D;
 
-        GameManager gameManager;
-
         private void Awake()
         {
-            gameManager = GameManager.Instance;
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
         {
-            if (gameManager.IsGameOver == false)
+
+            if (GameManager.Instance.IsGameOver == true)
             {
-                _rigidbody2D.velocity = new Vector2(-movingSpeed * Time.deltaTime, 0);
+                _rigidbody2D.velocity = Vector2.zero;
+                return;
             }
+            
+
+            _rigidbody2D.velocity = new Vector2(-movingSpeed * Time.deltaTime, 0);
+
+
         }
     }
 }
