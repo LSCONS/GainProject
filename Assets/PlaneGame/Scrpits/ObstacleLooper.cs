@@ -11,6 +11,7 @@ namespace PlaneGame
         private float holeSizeMax = 6f;
 
         private float obstacleHeightMargin = 4f;
+        private int allIndex = 0;
         
         Obstacle[] obstacles;
 
@@ -36,12 +37,14 @@ namespace PlaneGame
 
         private void Update()
         {
+            if (allIndex >= 100) return;
+
             if(GameManager.Instance.IsGameStart && GameManager.Instance.IsGameOver == false)
             {
                 GetGameLevelUpdate();
                 delayTime += Time.deltaTime;
 
-                if (delayTime > moveObstacleTime)
+                if (delayTime > moveObstacleTime) 
                 {
                     MoveObstacle();
                     delayTime = 0f;
@@ -54,6 +57,7 @@ namespace PlaneGame
         private Obstacle CheckObstacle()
         {
             Obstacle obstacle = null;
+            allIndex++;
             nowObstacleNum++;
             if (obstacles.Length > nowObstacleNum)
             {

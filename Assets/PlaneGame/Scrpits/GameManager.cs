@@ -17,7 +17,7 @@ namespace PlaneGame
     }
     public class GameManager : MonoBehaviour
     {
-        static GameManager gameManager;
+        private static GameManager gameManager;
         public static GameManager Instance { get => gameManager; }
 
         private bool isGameOver = false;
@@ -30,12 +30,14 @@ namespace PlaneGame
 
         public Action OnGameStart;
         public Action OnGameOver;
+        public Action OnGameClear;
+        
         private float currentDelayTime = 0;
         private float maxDelayTime = 1f;
 
         private void Awake()
         {
-            if(gameManager == null)
+            if (gameManager == null)
             {
                 gameManager = this;
             }
@@ -47,8 +49,15 @@ namespace PlaneGame
             if (Instance == null) Debug.Log("gameManger Instance null");
         }
 
+
         private void Update()
         {
+            if (DataManager.Instance.CurrentScore == 100)
+            {
+                GameClear();
+            }
+
+
             if (IsGameOver)
             {
                 currentDelayTime += Time.deltaTime;
@@ -84,17 +93,25 @@ namespace PlaneGame
         }
 
 
+        //게임을 클리어 했을 때 실행할 메서드
+        public void GameClear()
+        {
+            OnGameClear?.Invoke();
+        }
+
+
+        //현재 게임 난이도를 반환하는 메서드
         public GameLevel GetCurrentLevel()
         {
             GameLevel gameLevel = GameLevel.Easy;
 
             int currentScore = DataManager.Instance.CurrentScore;
 
-            if(currentScore <= 5)       gameLevel = GameLevel.Easy;
-            else if(currentScore <= 10) gameLevel = GameLevel.Noaml;
-            else if(currentScore <= 20) gameLevel = GameLevel.Hard;
-            else if(currentScore <= 50) gameLevel = GameLevel.Extreme;
-            else                        gameLevel = GameLevel.Hell;
+            if(currentScore < 5)       gameLevel = GameLevel.Easy;
+            else if(currentScore < 10) gameLevel = GameLevel.Noaml;
+            else if(currentScore < 20) gameLevel = GameLevel.Hard;
+            else if(currentScore < 50) gameLevel = GameLevel.Extreme;
+            else                       gameLevel = GameLevel.Hell;
 
             return gameLevel;
         }
