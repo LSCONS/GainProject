@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 120160980}
   - component: {fileID: 120160981}
   - component: {fileID: 120160982}
+  - component: {fileID: 120160983}
   m_Layer: 7
   m_Name: groundDirt (1)
   m_TagString: Obstacle
@@ -352,6 +353,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &120160983
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120160979}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &132246924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498965848907434397, guid: c76a69c4121a37746a32c3a25295276b,
@@ -645,6 +673,7 @@ GameObject:
   - component: {fileID: 580930215}
   - component: {fileID: 580930214}
   - component: {fileID: 580930216}
+  - component: {fileID: 580930217}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -664,6 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24315a3d597d830418dcde6df6942e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClick: 0
 --- !u!4 &580930211
 Transform:
   m_ObjectHideFlags: 0
@@ -764,6 +794,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333bcf78f1ea8c6409e8e88dcf06cbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerJumpForce: 5
 --- !u!114 &580930215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +819,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fed59d3b51d24547975903975c602bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &580930217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580930209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 4bb03fbdc7e6bd946823eeb871f318c0,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!4 &582496955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498965848907434397, guid: c76a69c4121a37746a32c3a25295276b,
@@ -805,6 +867,7 @@ GameObject:
   - component: {fileID: 623563266}
   - component: {fileID: 623563268}
   - component: {fileID: 623563267}
+  - component: {fileID: 623563269}
   m_Layer: 7
   m_Name: groundDirt (6)
   m_TagString: Obstacle
@@ -955,6 +1018,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &623563269
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623563265}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &654131366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,6 +1154,7 @@ GameObject:
   - component: {fileID: 721516529}
   - component: {fileID: 721516530}
   - component: {fileID: 721516531}
+  - component: {fileID: 721516532}
   m_Layer: 7
   m_Name: groundDirt (3)
   m_TagString: Obstacle
@@ -1214,6 +1305,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &721516532
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721516528}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &819429472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498965848907434397, guid: c76a69c4121a37746a32c3a25295276b,
@@ -1231,6 +1349,7 @@ GameObject:
   - component: {fileID: 843016387}
   - component: {fileID: 843016388}
   - component: {fileID: 843016389}
+  - component: {fileID: 843016390}
   m_Layer: 7
   m_Name: groundDirt (5)
   m_TagString: Obstacle
@@ -1381,6 +1500,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &843016390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843016386}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &911409101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1623,7 @@ GameObject:
   - component: {fileID: 956564730}
   - component: {fileID: 956564731}
   - component: {fileID: 956564732}
+  - component: {fileID: 956564733}
   m_Layer: 7
   m_Name: groundDirt (4)
   m_TagString: Obstacle
@@ -1627,6 +1774,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &956564733
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956564729}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &967490334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,6 +1910,7 @@ GameObject:
   - component: {fileID: 995864799}
   - component: {fileID: 995864800}
   - component: {fileID: 995864801}
+  - component: {fileID: 995864802}
   m_Layer: 7
   m_Name: groundDirt (2)
   m_TagString: Obstacle
@@ -1886,6 +2061,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &995864802
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995864798}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1116683800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2284,6 +2486,7 @@ GameObject:
   - component: {fileID: 1325273782}
   - component: {fileID: 1325273783}
   - component: {fileID: 1325273784}
+  - component: {fileID: 1325273785}
   m_Layer: 7
   m_Name: groundDirt
   m_TagString: Obstacle
@@ -2434,6 +2637,33 @@ PolygonCollider2D:
       - {x: 4.04, y: 0.015}
       - {x: 4.02, y: 0.024999999}
   m_UseDelaunayMesh: 0
+--- !u!50 &1325273785
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325273781}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1391845717
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2980,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1116683800}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1830972964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1830972966}
+  - component: {fileID: 1830972965}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1830972965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830972964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f30a4487f32141f4993f9d9a7d5a5eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1830972966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830972964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3944156, y: 3.5808666, z: 0.18649839}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1853767442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3169,6 +3443,7 @@ GameObject:
   - component: {fileID: 2039070520}
   - component: {fileID: 2039070522}
   - component: {fileID: 2039070521}
+  - component: {fileID: 2039070523}
   m_Layer: 7
   m_Name: groundDirt (7)
   m_TagString: Obstacle
@@ -3319,6 +3594,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &2039070523
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039070519}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &2108463635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3466,3 +3768,4 @@ SceneRoots:
   - {fileID: 1858582892}
   - {fileID: 669691758}
   - {fileID: 1164181201}
+  - {fileID: 1830972966}

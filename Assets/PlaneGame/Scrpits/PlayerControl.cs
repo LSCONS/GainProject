@@ -1,18 +1,39 @@
+using PlaneGame;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float playerJumpForce = 5f;
+
+
+    PlayerInputHandler inputHandler;
+    Rigidbody2D playerRigidbody;
+    GameManager gameManager;
+
+
+    private void Awake()
     {
-        
+        gameManager = GameManager.Instance;
+        inputHandler = GetComponent<PlayerInputHandler>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        if (gameManager.IsGameOver) return;
+
+        if (inputHandler.isClick)
+        {
+            Debug.Log("점프");
+            playerRigidbody.velocity = new Vector2(0, playerJumpForce);
+            inputHandler.isClick = false;
+        }
+
+        float angle = Mathf.Clamp(playerRigidbody.velocity.y * 10, -90, 90);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
+
+
 }

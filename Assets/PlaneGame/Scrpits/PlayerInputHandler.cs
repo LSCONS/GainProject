@@ -7,18 +7,15 @@ namespace PlaneGame
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        private bool isClick;
-        public bool IsClick {  get { return isClick; } }
+        public bool isClick;
 
-        private void OnClick(InputAction.CallbackContext context)
+        private void Update()
         {
-            if(context.started)
+            if(Input.GetKeyDown(KeyCode.Space) ||
+                Input.GetKeyDown(KeyCode.F) ||
+                Input.GetMouseButtonDown(0))
             {
                 isClick = true;
-            }
-            else
-            {
-                isClick = false;
             }
         }
     }
