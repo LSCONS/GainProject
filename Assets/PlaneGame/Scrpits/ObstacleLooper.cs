@@ -9,6 +9,8 @@ namespace PlaneGame
     {
         [SerializeField] private float holeSizeMin = 30f;
         [SerializeField] private float holeSizeMax = 50f;
+
+        [SerializeField] private float obstacleHeightMargin = 3f;
         
         Obstacle[] obstacles;
 
@@ -83,18 +85,14 @@ namespace PlaneGame
         }
 
 
-        //오브젝트를 전체적으로 왼쪽으로 옮기는 로직에 대해 어떻게 구현할 것인지 고민해야함.
-        //움직이는 배경 오브젝트들은 계속 왼쪽으로 움직이는 오브젝트인 MovingObject의 자식 오브젝트로 만든다.
-        //이후 배경오브젝트들은 특정 BoxCollider에 닿을 경우 다시 오른쪽으로 이동하며 반복하게 만듦.
-        //하지만 부딪힌 오브젝트가 Obstacle 오브젝트인 경우 MovingObject가 아닌 Obstacles의 자식으로 보낸다.
-        //이후 딜레이 타임이 끝나 해당 스크립크에서 특정 메서드를 실행하면 다음 순서에 있는 Obstacles에 있는 Obstacle를 호출하여
-        //MovingObject의 자식으로 보낸다.
+        //obstacle의 holesize를 random으로 정하고 배치함.
         private void MoveObstacle()
         {
             Obstacle obstacle = CheckObstacle();
-            float rand = Random.Range(holeSizeMin, holeSizeMax);
+            float randHoleSize = Random.Range(holeSizeMin, holeSizeMax);
+            float randHeight = Random.Range(-obstacleHeightMargin / 2, obstacleHeightMargin / 2);
             obstacle.transform.parent = movingObject.transform;
-            obstacle.SettingObstacle(rand);
+            obstacle.SettingObstacle(randHoleSize, randHeight);
         }
     }
 }
