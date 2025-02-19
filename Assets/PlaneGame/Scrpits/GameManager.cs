@@ -23,6 +23,11 @@ namespace PlaneGame
         {
             
         }
+
+        public void GameOver()
+        {
+            isGameOver = true;
+        }
     }
 }
 
