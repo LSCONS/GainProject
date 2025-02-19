@@ -15,6 +15,8 @@ namespace PlaneGame
         {
             currentScore = transform.Find("NowScore").GetComponent<TextMeshProUGUI>();
             bestScore = transform.Find("BestScore").GetComponent <TextMeshProUGUI>();
+            if (currentScore == null) Debug.Log("currentScore is null");
+            if (bestScore == null) Debug.Log("bestScore is null");
         }
 
         private void Start()

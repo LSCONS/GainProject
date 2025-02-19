@@ -16,6 +16,19 @@ public class DataInfo : MonoBehaviour
     public int PlaneGameBestScore { get => PlayerPrefs.GetInt(planeGameBestScoreKey, 0); }
 
 
+    private void Awake()
+    {
+        if(dataInfo == null)
+        {
+            dataInfo = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
     //현재 스코어를 최고 스코어와 비교하여 저장함
     public void SavePlaneGameData(int currentScore)
     {

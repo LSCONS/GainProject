@@ -15,6 +15,7 @@ namespace PlaneGame
         private void Update()
         {
             InputPlayerGameStart();
+            if (GameManager.Instance.IsClickStart == false) return;
             InputPlayerPlayGame();
         }
 
@@ -22,15 +23,16 @@ namespace PlaneGame
         //게임이 시작하기 전 플레이어의 입력을 받는 메서드
         private void InputPlayerGameStart()
         {
-            if (GameManager.Instance.IsGameStart == false)
+            if (GameManager.Instance.IsClickStart == false)
             {
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    isSelect = true;
+                    GameManager.Instance.ClickStart();
+                    UIManager.Instance.HomeUISetFalse();
                 }
                 else if (Input.GetKeyDown(KeyCode.X))
                 {
-                    isCancel = true;
+                    //메인씬으로 되돌아감.***
                 }
             }
         }
@@ -43,6 +45,10 @@ namespace PlaneGame
                 Input.GetKeyDown(KeyCode.F) ||
                 Input.GetMouseButtonDown(0))
             {
+                if(GameManager.Instance.IsGameStart == false)
+                {
+                    GameManager.Instance.GameStart();
+                }
                 isClick = true;
             }
         }
