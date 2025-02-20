@@ -29,7 +29,7 @@ namespace MainScene
 
         private void FixedUpdate()
         {
-            Movement(playerInputHandler.PlayerMoveValue);
+            Movement(playerInputHandler.MoveVector);
         }
 
         private void Movement(Vector2 direction)

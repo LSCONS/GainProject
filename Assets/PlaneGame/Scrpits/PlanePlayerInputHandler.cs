@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace PlaneGame
 {
-    public class PlayerInputHandler : MonoBehaviour
+    public class PlanePlayerInputHandler : MonoBehaviour
     {
         public bool isClick = false;
         public bool isSelect = false;

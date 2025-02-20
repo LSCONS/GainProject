@@ -13,14 +13,14 @@ namespace PlaneGame
         private float delayTime = 0f;
         
 
-        PlayerInputHandler inputHandler;
+        PlanePlayerInputHandler inputHandler;
         Rigidbody2D playerRigidbody;
         CircleCollider2D playerCircleCollider = null;
 
 
         private void Awake()
         {
-            inputHandler = GetComponent<PlayerInputHandler>();
+            inputHandler = GetComponent<PlanePlayerInputHandler>();
             playerRigidbody = GetComponent<Rigidbody2D>();
         }
 

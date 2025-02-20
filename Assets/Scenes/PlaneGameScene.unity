@@ -2053,7 +2053,6 @@ GameObject:
   m_Component:
   - component: {fileID: 580930211}
   - component: {fileID: 580930213}
-  - component: {fileID: 580930210}
   - component: {fileID: 580930215}
   - component: {fileID: 580930214}
   - component: {fileID: 580930216}
@@ -2065,21 +2064,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &580930210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580930209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24315a3d597d830418dcde6df6942e74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClick: 0
-  isSelect: 0
-  isCancel: 0
 --- !u!4 &580930211
 Transform:
   m_ObjectHideFlags: 0
@@ -2171,28 +2155,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 580930209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Script: {fileID: 11500000, guid: 557ab476bff9d8f4ab96d188cfb8df0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4bb03fbdc7e6bd946823eeb871f318c0,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  isClick: 0
+  isSelect: 0
+  isCancel: 0
 --- !u!4 &582496955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4498965848907434397, guid: c76a69c4121a37746a32c3a25295276b,
@@ -2357,6 +2325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 723367162}
+  - component: {fileID: 723367163}
   m_Layer: 5
   m_Name: GameClearUI
   m_TagString: Untagged
@@ -2385,6 +2354,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &723367163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723367161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d3252c4980d5f44ab45958064b1557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &781601659
 GameObject:
   m_ObjectHideFlags: 0

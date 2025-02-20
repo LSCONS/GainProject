@@ -12,7 +12,7 @@ namespace PlaneGame
 
 
         HomeUI homeUI;
-        GameObject gameClearUI;
+        GameClearUI gameClearUI;
 
         TextMeshProUGUI currentScore;
 
@@ -20,7 +20,7 @@ namespace PlaneGame
         {
             uiManager = this;
             homeUI = transform.Find("HomeUI").GetComponent<HomeUI>();
-            gameClearUI = transform.Find("GameClearUI").gameObject;
+            gameClearUI = transform.Find("GameClearUI").GetComponent<GameClearUI>();
             currentScore = transform.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         }
 
@@ -40,9 +40,10 @@ namespace PlaneGame
 
         
         //게임 클리어 시 보여 줄 메서드
-        public void GameClearPanel()
+        public void GameClearPanel(bool isClear)
         {
-            gameClearUI.SetActive(true);
+            gameClearUI.gameObject.SetActive(true);
+            gameClearUI.TextUpdate(isClear);
         }
     }
 

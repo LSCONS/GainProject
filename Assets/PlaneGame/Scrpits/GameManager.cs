@@ -63,8 +63,7 @@ namespace PlaneGame
 
             if (IsGameOver)
             {
-                if (isGameClear) UIManager.Instance.GameClearPanel();
-
+                UIManager.Instance.GameClearPanel(IsGameClear);
                 currentDelayTime += Time.deltaTime;
                 if (currentDelayTime > maxDelayTime)
                 {
