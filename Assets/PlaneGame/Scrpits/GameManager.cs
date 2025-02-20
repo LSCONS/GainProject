@@ -27,6 +27,8 @@ namespace PlaneGame
         public bool IsGameStart { get => isGameStart; }
         private bool isClickStart = false;
         public bool IsClickStart { get => isClickStart; }
+        private bool isGameClear = false;
+        public bool IsGameClear { get => isGameClear;}
 
         public Action OnGameStart;
         public Action OnGameOver;
@@ -54,16 +56,20 @@ namespace PlaneGame
         {
             if (DataManager.Instance.CurrentScore == 100)
             {
-                GameClear();
+                isGameClear = true;
+                isGameOver = true;
             }
 
 
             if (IsGameOver)
             {
+                if (isGameClear) UIManager.Instance.GameClearPanel();
+
                 currentDelayTime += Time.deltaTime;
                 if (currentDelayTime > maxDelayTime)
                 {
                     //게임이 오버된 후 MaxDelayTime이 흐른 후 씬 재시작***
+                    OnGameOver?.Invoke();
                     SceneManager.LoadScene("PlaneGameScene");
                 }
             }

@@ -28,8 +28,13 @@ namespace PlaneGame
         //텍스트를 업데이트해서 출력하는 메서드
         public void UpdateText()
         {
-            currentScore.text = DataInfo.Instance.PlaneGameCurrentScore.ToString();
-            bestScore.text = DataInfo.Instance.PlaneGameBestScore.ToString();
+            string currentScoreText = DataInfo.Instance.PlaneGameCurrentScore == 100 ?
+                "Clear!!" : DataInfo.Instance.PlaneGameCurrentScore.ToString();
+            string bestScoreText = DataInfo.Instance.PlaneGameBestScore == 100 ?
+                "Clear!!" : DataInfo.Instance.PlaneGameBestScore.ToString();
+
+            currentScore.text = currentScoreText;
+            bestScore.text = bestScoreText;
         }
     }
 }

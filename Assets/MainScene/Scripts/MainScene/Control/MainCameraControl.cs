@@ -7,10 +7,13 @@ namespace MainScene
     public class MainCameraControl : MonoBehaviour
     {
         public GameObject player;
+        private float cameraMinY = 0f;
+        private float cameraMaxY = 34f;
 
         private void Update()
         {
-            transform.position = new Vector3(0, player.transform.position.y, -10);
+            float cameraY = Mathf.Clamp(player.transform.position.y, cameraMinY, cameraMaxY);
+            transform.position = new Vector3(0, cameraY, -10);
         }
     }
 }

@@ -28,7 +28,6 @@ namespace PlaneGame
         //현재 스코어를 매개변수 값 만큼 증가시킴
         public void AddScore(int score)
         {
-            Debug.Log("score = " + score);
             currentScore += score;
         }
 
