@@ -35,7 +35,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
-        
         moveX = Input.GetAxisRaw(HorizontalKey);
         moveY = Input.GetAxisRaw(VerticalKey);
         isJump = Input.GetButtonDown(JumpKey);

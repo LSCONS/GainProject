@@ -13,12 +13,14 @@ namespace MainScene
         Rigidbody2D playerRigidbody2D;
         AnimationHandler animationHandler;
 
+
         private void Awake()
         {
             playerInputHandler = GetComponent<PlayerInputHandler>();
             playerRigidbody2D = GetComponent<Rigidbody2D>();
             animationHandler = GetComponent<AnimationHandler>();
         }
+
 
         private void Start()
         {
@@ -27,16 +29,19 @@ namespace MainScene
             transform.position = new Vector2(x, y);
         }
 
+
         private void FixedUpdate()
         {
             Movement(playerInputHandler.MoveVector);
         }
 
+
+        //플레이어가 입력된 방향벡터의 방향으로 Speed의 수치만큼 이동하는 메서드
         private void Movement(Vector2 direction)
         {
             direction = direction * Speed;
             playerRigidbody2D.velocity = direction;
-            animationHandler.AnimatorMove(direction);
+            animationHandler.AnimatorMove(direction);   //애니메이션에 해당 방향벡터를 보냄.
         }
     }
 

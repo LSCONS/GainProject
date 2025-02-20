@@ -27,24 +27,32 @@ namespace PlaneGame
 
         private void Awake()
         {
-            Setup();
+            Setup();//시작 하기 전 필요한 값을 대입해두거나 초기화하는 메서드
         }
+
 
         private void Start()
         {
-            MoveObstacle();
+            MoveObstacle();//게임이 시작했을때 가시 1개를 움직이는 오브젝트에 연결해서 시작함.
         }
+
 
         private void Update()
         {
-            if (allIndex >= 100) return;
+            if (allIndex >= GameManager.Instance.GameClearScoreMax) return;//가시를 클리어 기준까지 던짐.
+            SettingObstacle();
+        }
 
-            if(GameManager.Instance.IsGameStart && GameManager.Instance.IsGameOver == false)
+
+        //게임이 시작됐고 게임오버 상태가 아닐 때, 일정 주기마다 가시를 플레이어에게 보냄.
+        private void SettingObstacle()
+        {
+            if (GameManager.Instance.IsGameStart && GameManager.Instance.IsGameOver == false)
             {
                 GetGameLevelUpdate();
                 delayTime += Time.deltaTime;
 
-                if (delayTime > moveObstacleTime) 
+                if (delayTime > moveObstacleTime)
                 {
                     MoveObstacle();
                     delayTime = 0f;
@@ -85,14 +93,6 @@ namespace PlaneGame
         }
 
 
-        //해당 장애물의 위치를 초기화하는 메서드
-        public void ResetObstaclePosition(Obstacle obstacle)
-        {
-            obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
-            obstacle.transform.parent = obstaclesObject.transform;
-        }
-
-
         //obstacle의 holesize를 random으로 정하고 배치함.
         private void MoveObstacle()
         {
@@ -104,6 +104,7 @@ namespace PlaneGame
         }
 
 
+        //현재의 난이도에 따라 가시 생성의 주기, 높이, 너비 등을 조절하는 메서드
         private void GetGameLevelUpdate()
         {
             GameLevel gameLevel = GameManager.Instance.GetCurrentLevel();
@@ -141,6 +142,14 @@ namespace PlaneGame
                     moveObstacleTime = 2f;
                     break;
             }
+        }
+
+
+        //해당 장애물의 위치를 초기화하는 메서드
+        public void ResetObstaclePosition(Obstacle obstacle)
+        {
+            obstacle.transform.position = new Vector3(obstacleResetX, 0, 0);
+            obstacle.transform.parent = obstaclesObject.transform;
         }
     }
 }

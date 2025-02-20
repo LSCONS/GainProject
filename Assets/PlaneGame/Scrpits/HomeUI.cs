@@ -8,15 +8,15 @@ namespace PlaneGame
 {
     public class HomeUI : MonoBehaviour
     {
-        private TextMeshProUGUI currentScore;
-        private TextMeshProUGUI bestScore;
+        private TextMeshProUGUI currentScoreGUI;
+        private TextMeshProUGUI bestScoreGUI;
 
         private void Awake()
         {
-            currentScore = transform.Find("NowScore").GetComponent<TextMeshProUGUI>();
-            bestScore = transform.Find("BestScore").GetComponent <TextMeshProUGUI>();
-            if (currentScore == null) Debug.Log("currentScore is null");
-            if (bestScore == null) Debug.Log("bestScore is null");
+            currentScoreGUI = transform.Find("NowScore").GetComponent<TextMeshProUGUI>();
+            bestScoreGUI = transform.Find("BestScore").GetComponent <TextMeshProUGUI>();
+            if (currentScoreGUI == null) Debug.Log("currentScore is null");
+            if (bestScoreGUI == null) Debug.Log("bestScore is null");
         }
 
         private void Start()
@@ -28,13 +28,18 @@ namespace PlaneGame
         //텍스트를 업데이트해서 출력하는 메서드
         public void UpdateText()
         {
-            string currentScoreText = DataInfo.Instance.PlaneGameCurrentScore == 100 ?
-                "Clear!!" : DataInfo.Instance.PlaneGameCurrentScore.ToString();
-            string bestScoreText = DataInfo.Instance.PlaneGameBestScore == 100 ?
-                "Clear!!" : DataInfo.Instance.PlaneGameBestScore.ToString();
+            int currentScore = DataInfo.Instance.PlaneGameCurrentScore;
+            int bestScore = DataInfo.Instance.PlaneGameBestScore;
+            int clearScore = GameManager.Instance.GameClearScoreMax;
 
-            currentScore.text = currentScoreText;
-            bestScore.text = bestScoreText;
+            string currentScoreText =
+                (currentScore == clearScore) ? "Clear!!" : currentScore.ToString();
+
+            string bestScoreText =
+                (bestScore == clearScore) ? "Clear!!" : bestScore.ToString();
+
+            currentScoreGUI.text = currentScoreText;
+            bestScoreGUI.text = bestScoreText;
         }
     }
 }

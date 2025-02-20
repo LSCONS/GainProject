@@ -22,20 +22,13 @@ public class DataInfo : MonoBehaviour
 
     private void Awake()
     {
-        if(dataInfo == null)
-        {
-            dataInfo = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        if (dataInfo == null) { dataInfo = this; }
+        else { Destroy(gameObject); }
         DontDestroyOnLoad(gameObject);
     }
 
 
-    //현재 스코어를 최고 스코어와 비교하여 저장함
+    //비행기 게임에서 현재 스코어를 최고 스코어와 비교하여 저장
     public void SavePlaneGameData(int currentScore)
     {
         if (PlaneGameBestScore < currentScore)

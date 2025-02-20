@@ -37,30 +37,37 @@ namespace PlaneGame
         private float currentDelayTime = 0;
         private float maxDelayTime = 1f;
 
+        private int gameClearScoreMax = 100;
+        public int GameClearScoreMax { get => gameClearScoreMax; }
+
         private void Awake()
         {
-            if (gameManager == null)
-            {
-                gameManager = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
-            if (Instance == null) Debug.Log("gameManger Instance null");
+            if (gameManager == null){gameManager = this;}
+            else {Destroy(gameObject);}
         }
 
 
         private void Update()
+        {
+            CheckPlayerGameClear();
+            CheckPlayerGameOver();
+        }
+
+
+        //플레이어가 게임을 클리어했는지 확인하는 메서드
+        private void CheckPlayerGameClear()
         {
             if (DataManager.Instance.CurrentScore == 100)
             {
                 isGameClear = true;
                 isGameOver = true;
             }
+        }
 
 
+        //게임이 끝났다면 UI를 갱신하고 씬을 재로드하는 메서드
+        private void CheckPlayerGameOver()
+        {
             if (IsGameOver)
             {
                 UIManager.Instance.GameClearPanel(IsGameClear);

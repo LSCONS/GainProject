@@ -25,6 +25,7 @@ namespace PlaneGame
         }
 
 
+        //닿은 collision이 Background layer일 때 위치값을 초기화해주는 Trigger
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("Background"))

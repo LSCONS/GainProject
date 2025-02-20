@@ -12,21 +12,17 @@ namespace PlaneGame
 
         private void Update()
         {
-            if (GameManager.Instance.IsGameOver == true)
-            {
-                return;
-            }
+            if (GameManager.Instance.IsGameOver) return;
 
             if (GameManager.Instance.IsGameStart)
             {
                 GetMovingSpeed();
-                transform.position = Vector3.Lerp(
-                    transform.position,
-                    transform.position + (Vector3.left),
-                    movingSpeed * Time.deltaTime);
+                ObjectMovement();
             }
         }
 
+
+        //배경이 움직이는 속도를 난이도에 맞춰 설정하는 메서드
         private void GetMovingSpeed()
         {
             GameLevel gameLevel = GameManager.Instance.GetCurrentLevel();
@@ -48,6 +44,16 @@ namespace PlaneGame
                     movingSpeed = 15f;
                     break;
             }
+        }
+
+
+        //배경이 실제 움직이는 처리를 하는 메서드
+        private void ObjectMovement()
+        {
+            transform.position = Vector3.Lerp(
+                                    transform.position,
+                                    transform.position + (Vector3.left),
+                                    movingSpeed * Time.deltaTime);
         }
     }
 }
