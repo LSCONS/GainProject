@@ -57,7 +57,7 @@ namespace PlaneGame
         //플레이어가 게임을 클리어했는지 확인하는 메서드
         private void CheckPlayerGameClear()
         {
-            if (DataManager.Instance.CurrentScore == 100)
+            if (DataManager.Instance.CurrentScore == GameClearScoreMax)
             {
                 isGameClear = true;
                 isGameOver = true;
