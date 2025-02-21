@@ -32,7 +32,6 @@ namespace PlaneGame
 
         public Action OnGameStart;
         public Action OnGameOver;
-        public Action OnGameClear;
         
         private float currentDelayTime = 0;
         private float maxDelayTime = 1f;
@@ -102,13 +101,6 @@ namespace PlaneGame
         public void ClickStart()
         {
             isClickStart = true;
-        }
-
-
-        //게임을 클리어 했을 때 실행할 메서드
-        public void GameClear()
-        {
-            OnGameClear?.Invoke();
         }
 
 

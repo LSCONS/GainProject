@@ -19,12 +19,5 @@ namespace PlaneGame
         {
             animator.SetBool(IsDead, true);
         }
-
-
-        //게임이 재시작 될 경우 처리할 애니메이션 메서드
-        public void GameRestart()
-        {
-            animator.SetBool(IsDead, false);
-        }
     }
 }
